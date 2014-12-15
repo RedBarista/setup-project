@@ -1,0 +1,11 @@
+{
+  "name": "setup-project",
+  "version": "0.0.1",
+  "description": "My setup project",
+  "repository": {
+    "type": "git",
+    "url": "?.git"
+  },
+  "author": "Mathieu Pouliot-Labreche",
+  "license": "ISC"
+}
