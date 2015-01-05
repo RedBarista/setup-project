@@ -19,7 +19,7 @@ gulp.task('coffee', function(){
 gulp.task('js', function(){
 	gulp.src(jsSources)
 		.pipe(concat('script.js'))
-		.pipe(browserify())
+		.pipe(browserify({ debug: true }))
 		.pipe(gulp.dest('builds/development/js'))
 });
 
@@ -30,19 +30,9 @@ gulp.task('compass', function(){
 			css: 'builds/development/css',
 			image: 'builds/development/images',
 			style: 'expanded',
-			comments: false
+			comments: true
 		})
-		.on('error', gutil.log))   
+		.on('error', gutil.log))
+		// Il semblerait que cette ligne de code n'est plus nécessaire puisque compass s'en charge
+		// .pipe(gulp.dest('builds/development/css')) 
 });
-
-/*gulp.task('compass', function() {
-	gulp.src(sassSources)
-    	.pipe(compass({
-      		sass: 'components/sass',
-      		image: 'builds/development/images',
-      		style: 'expanded',
-      		comments: true
-    	}))
-    	.on('error', gutil.log)
-    .pipe(gulp.dest('builds/development/css'))
-});*/
