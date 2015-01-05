@@ -36,3 +36,5 @@ gulp.task('compass', function(){
 		// Il semblerait que cette ligne de code n'est plus nécessaire puisque compass s'en charge
 		// .pipe(gulp.dest('builds/development/css')) 
 });
+
+gulp.task('default', ['coffee', 'js', 'compass']);
